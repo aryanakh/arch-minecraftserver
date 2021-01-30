@@ -77,7 +77,7 @@ rcurl.sh -o "/tmp/minecraft_server.jar" "${minecraft_java_url}"
 # move minecraft java server
 mkdir -p "/srv/minecraft" && mv "/tmp/minecraft_server.jar" "/srv/minecraft/"
 
-elif [[ "${SERVER-TYPE}" == "modded"]]; then
+else
 
 mkdir -p "/srv/minecraft"
 
