@@ -1,5 +1,5 @@
 FROM binhex/arch-base:latest
-MAINTAINER binhex
+LABEL maintainer="aryanakh"
 
 # additional files
 ##################
