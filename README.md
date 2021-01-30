@@ -25,13 +25,14 @@ docker run -d \
     -e WEBUI_USER=<specify webui username> \
     -e WEBUI_PASS=<specify webui password> \
     -e WEBUI_CONSOLE_TITLE=<specify webui console title> \
+    -e SERVER_TYPE=<specify if server is modded or normal> \
     -e JAVA_INITIAL_HEAP_SIZE=<java initial heap size in megabytes> \
     -e JAVA_MAX_HEAP_SIZE=<java max heap size in megabytes> \
     -e JAVA_MAX_THREADS=<java max number of threads> \
     -e UMASK=<umask for created files> \
     -e PUID=<uid for user> \
     -e PGID=<gid for user> \
-    binhex/arch-minecraftserver
+    aryanakh/arch-minecraftserver
 ```
 
 Please replace all user variables in the above command defined by <> with the correct values.
@@ -57,13 +58,14 @@ docker run -d \
     -e WEBUI_USER=admin \
     -e WEBUI_PASS=minecraft \
     -e WEBUI_CONSOLE_TITLE=Minecraft Server \
+    -e SERVER_TYPE=modded \
     -e JAVA_INITIAL_HEAP_SIZE=512M \
     -e JAVA_MAX_HEAP_SIZE=1024M \
     -e JAVA_MAX_THREADS=1 \
     -e UMASK=000 \
     -e PUID=0 \
     -e PGID=0 \
-    binhex/arch-minecraftserver
+    aryanakh/arch-minecraftserver
 ```
 
 **Notes**
@@ -77,9 +79,3 @@ User ID (PUID) and Group ID (PGID) can be found by issuing the following command
 ```
 id <username>
 ```
-___
-If you appreciate my work, then please consider buying me a beer  :D
-
-[![PayPal donation](https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MM5E27UX6AUU4)
-
-[Documentation](https://github.com/binhex/documentation) | [Support forum](https://forums.unraid.net/topic/84880-support-binhex-minecraftserver/)
