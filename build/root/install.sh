@@ -68,7 +68,7 @@ fi
 # use awk to match start and end of tags
 # grep to perl regex match download url
 
-if [[ "${SERVER-TYPE}" == "mojang" ]] then
+if [[ "${SERVER-TYPE}" == "mojang" ]]; then
 minecraft_java_url=$(rcurl.sh https://www.minecraft.net/en-us/download/server | awk '/minecraft-version/,/<\/div>/' | grep -Po -m 1 'https://launcher.mojang.com[^"]+')
 
 # download compiled minecraft java server
@@ -77,7 +77,7 @@ rcurl.sh -o "/tmp/minecraft_server.jar" "${minecraft_java_url}"
 # move minecraft java server
 mkdir -p "/srv/minecraft" && mv "/tmp/minecraft_server.jar" "/srv/minecraft/"
 
-elif [[ "${SERVER-TYPE}" == "modded"]] then
+elif [[ "${SERVER-TYPE}" == "modded"]]; then
 
 mkdir -p "/srv/minecraft"
 
