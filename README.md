@@ -1,14 +1,7 @@
-**Application**
+## A Minecraft Server in Docker optimized for Unraid
 
-[Minecraft Server](https://www.minecraft.net/en-us/download/server/)
+This docker allows you to run a minecraft server inside of a docker container. It is a fork of [Binhex's Minecraft Basic Server](https://github.com/binhex/arch-minecraftserver) to allow for modded servers with custom server JARs. The default configuration will install the latest vanilla minecraft server. It is recommended to first install this default configuration and check if it works before installing a modded server. After install start up, stop the container. Then you can import all the files from a modded server that you need. Make sure to set the SERVER_TYPE variable to modded. This will prevent the container from pulling the latest release from Mojang. For now, you must rename the server JAR to minecraft_server.jar. In later versions I will modify this to allow custom naming and more! 
 
-**Description**
-
-Minecraft is a sandbox video game created by Swedish game developer Markus Persson and released by Mojang in 2011. The game allows players to build with a variety of different blocks in a 3D procedurally generated world, requiring creativity from players. Other activities in the game include exploration, resource gathering, crafting, and combat. Multiple game modes that change gameplay are available, including—but not limited to—a survival mode, in which players must acquire resources to build the world and maintain health, and a creative mode, where players have unlimited resources to build with.
-
-**Build notes**
-
-Latest stable Minecraft Java release from Mojang.
 
 **Usage**
 ```
