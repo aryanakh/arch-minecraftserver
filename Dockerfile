@@ -1,4 +1,4 @@
-FROM binhex/arch-base:latest
+FROM aryanakh/arch-base:latest
 LABEL maintainer="aryanakh"
 
 # additional files
