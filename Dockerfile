@@ -1,5 +1,5 @@
-FROM aryanakh/arch-base:latest
-LABEL maintainer="aryanakh"
+FROM binhex/arch-base:latest
+LABEL maintainer="binhex"
 
 # additional files
 ##################
