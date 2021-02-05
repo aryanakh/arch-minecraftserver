@@ -19,7 +19,7 @@ docker run -d \
     -e WEBUI_PASS=<specify webui password> \
     -e WEBUI_CONSOLE_TITLE=<specify webui console title> \
     -e SERVER_TYPE=<specify if server is mojang or modded> \
-    -e JAVA_INITIAL_HEAP_SIZE=<java initial heap size in megabytes> \
+    -e JAVA_MIN_HEAP_SIZE=<java min heap size in megabytes> \
     -e JAVA_MAX_HEAP_SIZE=<java max heap size in megabytes> \
     -e JAVA_MAX_THREADS=<java max number of threads> \
     -e UMASK=<umask for created files> \
@@ -52,7 +52,7 @@ docker run -d \
     -e WEBUI_USER=admin \
     -e WEBUI_PASS=minecraft \
     -e WEBUI_CONSOLE_TITLE=Minecraft Server \
-    -e JAVA_INITIAL_HEAP_SIZE=512M \
+    -e JAVA_MIN_HEAP_SIZE=1024M \
     -e JAVA_MAX_HEAP_SIZE=1024M \
     -e JAVA_MAX_THREADS=1 \
     -e UMASK=000 \
@@ -65,7 +65,7 @@ docker run -d \
 
 If you do **NOT** want world backups and/or purging of backups then set the value to '0' for env vars 'CREATE_BACKUP_HOURS' and/or 'PURGE_BACKUP_DAYS'.
 
-Env vars 'JAVA_INITIAL_HEAP_SIZE' value and 'JAVA_MAX_HEAP_SIZE' values must be a multiple of 1024 and greater than 2MB.
+Env vars 'JAVA_MIN_HEAP_SIZE' value and 'JAVA_MAX_HEAP_SIZE' values must be a multiple of 1024 and greater than 2MB. Due to java's garbage collection, it is recommended to set the Min and Max heap at the same value.
 
 User ID (PUID) and Group ID (PGID) can be found by issuing the following command for the user you want to run the container as:-
 
