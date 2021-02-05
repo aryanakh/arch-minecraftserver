@@ -77,11 +77,12 @@ rcurl.sh -o "/tmp/minecraft_server.jar" "${minecraft_java_url}"
 # move minecraft java server
 mkdir -p "/srv/minecraft" && mv "/tmp/minecraft_server.jar" "/srv/minecraft/"
 elif [[ "${SERVER_TYPE}" == "modded" ]]; then
-
+# create directory for modded server
 mkdir -p "/srv/minecraft"
 
 else
 
+# incorrect handler
 echo "[ERR] Incorrect SERVER_TYPE variable."
 
 fi
