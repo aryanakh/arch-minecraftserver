@@ -65,7 +65,7 @@ docker run -d \
 
 If you do **NOT** want world backups and/or purging of backups then set the value to '0' for env vars 'CREATE_BACKUP_HOURS' and/or 'PURGE_BACKUP_DAYS'.
 
-Env vars 'JAVA_MIN_HEAP_SIZE' value and 'JAVA_MAX_HEAP_SIZE' values must be a multiple of 1024 and greater than 2MB. Due to java's garbage collection, it is recommended to set the Min and Max heap at the same value. Having the same minimum and maximum not only optimize RAM usages but also improves garbage collection behavior.
+Env vars 'JAVA_MIN_HEAP_SIZE' value and 'JAVA_MAX_HEAP_SIZE' values must be a multiple of 1024 and greater than 2MB. Due to java's garbage collection, it is recommended to set the Min and Max heap at the same value. Having the same minimum and maximum not only optimize RAM usages but also improves garbage collection behavior. While not common for unraid and docker users, do **NOT** set these values at or near the maximum RAM in your system/docker allocation. The JVM will attempted to use what you allocate to it.
 
 User ID (PUID) and Group ID (PGID) can be found by issuing the following command for the user you want to run the container as:-
 
