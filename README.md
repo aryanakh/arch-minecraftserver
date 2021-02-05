@@ -1,6 +1,6 @@
 ## A Minecraft Server in Docker optimized for Unraid
 
-This docker allows you to run a minecraft server inside of a docker container. It is a fork of [Binhex's Minecraft Basic Server](https://github.com/binhex/arch-minecraftserver) which allows for modded servers with custom server JARs. The default configuration will install the latest vanilla minecraft server. It is recommended to first install this default configuration and check if it works before installing a modded server. After install start up, stop the container. Then you can import all the files from a modded server that you need. Make sure to set the SERVER_TYPE variable to modded. This will prevent the container from pulling the latest release from Mojang. For now, you must rename the server JAR to minecraft_server.jar. In later versions I will modify this to allow custom naming and more! 
+This docker allows you to run a minecraft server inside of a docker container. It is a fork of [Binhex's Minecraft Basic Server](https://github.com/binhex/arch-minecraftserver) which allows for modded servers with custom server JARs. It also optimizes the JVM memory arguments to address performace issues relating to garbage collection. The default configuration will install the latest vanilla minecraft server. It is recommended to first install this default configuration and check if it works before installing a modded server. After install start up, stop the container. Then you can import all the files from a modded server that you need. Make sure to set the SERVER_TYPE variable to modded. This will prevent the container from pulling the latest release from Mojang. For now, you must rename the server JAR to minecraft_server.jar. In later versions I will modify this to allow custom naming and more! 
 
 
 **Usage**
@@ -65,7 +65,7 @@ docker run -d \
 
 If you do **NOT** want world backups and/or purging of backups then set the value to '0' for env vars 'CREATE_BACKUP_HOURS' and/or 'PURGE_BACKUP_DAYS'.
 
-Env vars 'JAVA_MIN_HEAP_SIZE' value and 'JAVA_MAX_HEAP_SIZE' values must be a multiple of 1024 and greater than 2MB. Due to java's garbage collection, it is recommended to set the Min and Max heap at the same value.
+Env vars 'JAVA_MIN_HEAP_SIZE' value and 'JAVA_MAX_HEAP_SIZE' values must be a multiple of 1024 and greater than 2MB. Due to java's garbage collection, it is recommended to set the Min and Max heap at the same value. Having the same minimum and maximum not only optimize RAM usages but also improves garbage collection behavior.
 
 User ID (PUID) and Group ID (PGID) can be found by issuing the following command for the user you want to run the container as:-
 
