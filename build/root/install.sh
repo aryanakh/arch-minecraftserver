@@ -219,12 +219,12 @@ if [[ "${ENABLE_WEBUI_CONSOLE}" == "yes" ]]; then
 	fi
 fi
 
-export JAVA_INITIAL_HEAP_SIZE=$(echo "${JAVA_INITIAL_HEAP_SIZE}" | sed -e 's~^[ \t]*~~;s~[ \t]*$~~')
-if [[ ! -z "${JAVA_INITIAL_HEAP_SIZE}" ]]; then
-	echo "[info] JAVA_INITIAL_HEAP_SIZE defined as '${JAVA_INITIAL_HEAP_SIZE}'" | ts '%Y-%m-%d %H:%M:%.S'
+export JAVA_MIN_HEAP_SIZE=$(echo "${JAVA_MIN_HEAP_SIZE}" | sed -e 's~^[ \t]*~~;s~[ \t]*$~~')
+if [[ ! -z "${JAVA_MINE_HEAP_SIZE}" ]]; then
+	echo "[info] JAVA_MIN_HEAP_SIZE defined as '${JAVA_MIN_HEAP_SIZE}'" | ts '%Y-%m-%d %H:%M:%.S'
 else
-	echo "[info] JAVA_INITIAL_HEAP_SIZE not defined,(via -e JAVA_INITIAL_HEAP_SIZE), defaulting to '512M'" | ts '%Y-%m-%d %H:%M:%.S'
-	export JAVA_INITIAL_HEAP_SIZE="512M"
+	echo "[info] JAVA_MIN_HEAP_SIZE not defined,(via -e JAVA_MIN_HEAP_SIZE), defaulting to '512M'" | ts '%Y-%m-%d %H:%M:%.S'
+	export JAVA_MIN_HEAP_SIZE="512M"
 fi
 
 export JAVA_MAX_HEAP_SIZE=$(echo "${JAVA_MAX_HEAP_SIZE}" | sed -e 's~^[ \t]*~~;s~[ \t]*$~~')
