@@ -219,6 +219,34 @@ if [[ "${ENABLE_WEBUI_CONSOLE}" == "yes" ]]; then
 	fi
 fi
 
+# Define what server Jar to use
+export SERVER_TYPE=$(echo "${SERVER_TYPE}" | sed -e 's~^[ \t]*~~;s~[ \t]*$~~')
+if [[ ! -z "${SERVER_TYPE}" ]]; then
+	echo "[info] SERVER_TYPE defined as '${SERVER_TYPE}'" | ts '%Y-%m-%d %H:%M:%.S'
+else
+	echo "[info] SERVER_TYPE,(via -e SERVER_TYPE), defaulting to 'mojang'" | ts '%Y-%m-%d %H:%M:%.S'
+	export SERVER_TYPE="mojang"
+fi
+
+if [[ "${SERVER_TYPE}" == "mojang" ]]; then
+	export SERVER_JAR=$(echo "${SERVER_JAR}" | sed -e 's~^[ \t]*~~;s~[ \t]*$~~')
+	if [[ ! -z "${SERVER_JAR}" ]]; then
+		echo "[info] SERVER_JAR defined as '${SERVER_JAR}'" | ts '%Y-%m-%d %H:%M:%.S'
+	else
+		echo "[info] SERVER_JAR not defined (via -e SERVER_JAR), defaulting to 'minecraft_server.jar'" | ts '%Y-%m-%d %H:%M:%.S'
+		export SERVER_JAR="minecraft_server.jar"
+	fi
+	
+else
+	export SERVER_JAR=$(echo "${SERVER_JAR}" | sed -e 's~^[ \t]*~~;s~[ \t]*$~~')	
+	if [[ ! -z "${SERVER_JAR}" ]]; then
+		echo "[info] SERVER_JAR defined as '${SERVER_JAR}'" | ts '%Y-%m-%d %H:%M:%.S'
+	else
+		echo "[warn] SERVER_JAR not defined (via -e SERVER_JAR), defaulting to 'minecraft_server.jar'" | ts '%Y-%m-%d %H:%M:%.S'
+		export SERVER_JAR="minecraft_server.jar"
+	fi
+fi
+
 export JAVA_MIN_HEAP_SIZE=$(echo "${JAVA_MIN_HEAP_SIZE}" | sed -e 's~^[ \t]*~~;s~[ \t]*$~~')
 if [[ ! -z "${JAVA_MINE_HEAP_SIZE}" ]]; then
 	echo "[info] JAVA_MIN_HEAP_SIZE defined as '${JAVA_MIN_HEAP_SIZE}'" | ts '%Y-%m-%d %H:%M:%.S'
