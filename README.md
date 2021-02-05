@@ -21,6 +21,7 @@ docker run -d \
     -e WEBUI_PASS=<specify webui password> \
     -e WEBUI_CONSOLE_TITLE=<specify webui console title> \
     -e SERVER_TYPE=<specify if server is mojang or modded> \
+    -e SERVER_JAR=<specify the server JAR to run the server> \
     -e JAVA_MIN_HEAP_SIZE=<java min heap size in megabytes> \
     -e JAVA_MAX_HEAP_SIZE=<java max heap size in megabytes> \
     -e JAVA_MAX_THREADS=<java max number of threads> \
@@ -47,6 +48,7 @@ docker run -d \
     -v /apps/docker/minecraftserver:/config \
     -v /etc/localtime:/etc/localtime:ro \
     -e SERVER_TYPE=mojang \
+    -e SERVER_TYPE=minecraft_server.jar \
     -e CREATE_BACKUP_HOURS=12 \
     -e PURGE_BACKUP_DAYS=14 \
     -e ENABLE_WEBUI_CONSOLE=yes \
