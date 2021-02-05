@@ -83,7 +83,8 @@ mkdir -p "/srv/minecraft"
 else
 
 # incorrect handler
-echo "[ERR] Incorrect SERVER_TYPE variable."
+mkdir -p "/srv/minecraft"
+echo "[ERR] Incorrect SERVER_TYPE variable. Assuming modded server. Set to 'mojang' for vanilla server."
 
 fi
 
