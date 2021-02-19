@@ -25,7 +25,7 @@ docker run -d \
     -e UMASK=<umask for created files> \
     -e PUID=<uid for user> \
     -e PGID=<gid for user> \
-    aryanakh/arch-minecraftserver
+    aryanakh/minecraftserver
 ```
 
 Please replace all user variables in the above command defined by <> with the correct values.
