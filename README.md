@@ -59,7 +59,7 @@ docker run -d \
     -e UMASK=000 \
     -e PUID=0 \
     -e PGID=0 \
-    aryanakh/arch-minecraftserver
+    aryanakh/minecraftserver
 ```
 
 **Notes**
