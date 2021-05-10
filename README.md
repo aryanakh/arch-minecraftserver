@@ -1,5 +1,7 @@
 ## A Minecraft Server in Docker optimized for Unraid
 
+*DEPRECIATED. Please use Binhex's Minecraft Basic Server Image*
+
 This docker allows you to run a minecraft server inside of a docker container. It is a fork of [Binhex's Minecraft Basic Server](https://github.com/binhex/arch-minecraftserver) which allows for modded servers with custom server JARs. It also optimizes the JVM memory arguments to address performace issues relating to garbage collection. The default configuration will install the latest vanilla minecraft server. It is recommended to first install this default configuration and check if it works before installing a modded server. After install start up, stop the container. Then you can import all the files from a modded server that you need. Make sure to set the SERVER_TYPE variable to modded. This will prevent the container from pulling and running the latest release from Mojang. If you choose a different name for the Server JAR, set the SERVER_JAR variable to the name of your JAR file. You **MUST** include ".jar" at the end of the JAR name. 
 
 **Usage**
